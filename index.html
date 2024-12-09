@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="heart"></div>
+    <style>
+        .heart{
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+            margin: auto;
+            margin-top: 10%;
+            /*动画 动画名称 执行的周期 执行方式 执行的次数*/
+            animation: heart 1s ease-in infinite;
+        }
+        @keyframes heart{
+            0%{
+                transform: scale(80%); rotate: -45deg;
+                opacity: 1;
+            }
+            80%{
+                transform: scale(100%); rotate: -45deg;
+                opacity: 0.8;
+            }
+            100%{
+                transform: scale(80%); rotate: -45deg;
+                opacity: 1;
+            }
+        }
+        .heart::before{
+         content: " ";
+         width: 100px;
+         height: 100px;
+         border-radius: 50%;
+         background-color: brown;
+         position:absolute;
+         transform: translateY(-50%);
+
+         
+        }
+        .heart::after{
+         content: " ";
+         width: 100px;
+         height: 100px;
+         border-radius: 50%;
+         background-color: brown;
+         position:absolute;
+         transform: translateX(50%);
+        }
+    </style>
+</body>
+</html>
